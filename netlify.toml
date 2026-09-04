@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/photographers"
+  to = "/.netlify/functions/photographers"
+  status = 200
+
+[[redirects]]
+  from = "/api/photographers/*"
+  to = "/.netlify/functions/photographers/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/login"
+  to = "/.netlify/functions/photographers/auth/login"
+  status = 200
